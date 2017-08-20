@@ -12,6 +12,10 @@ import net.jcip.examples.ch05.LaunderThrowable;
 import net.jcip.examples.ch06.SingleThreadRender.ImageData;
 import net.jcip.examples.ch06.SingleThreadRender.ImageInfo;
 
+/*
+ * 终级html渲染方案，这个类才能称为Render，
+ * 它使用了ExecutorCompletionService
+ */
 public abstract class Render {
 
 	private final ExecutorService executor;

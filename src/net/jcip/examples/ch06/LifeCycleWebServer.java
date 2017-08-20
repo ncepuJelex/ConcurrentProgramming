@@ -9,7 +9,11 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+/**
+ * 取消任务，执行周期流程演示
+ * @author zhenhua
+ * @date 2017年8月16日
+ */
 public class LifeCycleWebServer {
 
 	private final ExecutorService exec = Executors.newCachedThreadPool();

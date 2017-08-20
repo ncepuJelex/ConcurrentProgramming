@@ -6,6 +6,11 @@ import java.net.Socket;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
+/**
+ * 终于等到池化的技术了！
+ * @author zhenhua
+ * @date 2017年8月16日
+ */
 public class TaskExecutionWebServer {
 
 	private static final int NTHREAD = 100;

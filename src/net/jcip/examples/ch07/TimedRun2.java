@@ -6,6 +6,13 @@ import java.util.concurrent.TimeUnit;
 
 import net.jcip.examples.ch05.LaunderThrowable;
 
+/**
+ * 好的方法设计应该是这样的！把r的执行结果，或者interrupted后的现场信息
+ * 保存起来，然后在指定时间后interrupt,
+ * 然后看执行后的结果是啥
+ * @author Jelex.xu
+ * @date 2017年8月17日
+ */
 public class TimedRun2 {
 
 	private static final ScheduledExecutorService cancelExec = Executors.newScheduledThreadPool(1);
@@ -44,7 +51,7 @@ public class TimedRun2 {
 			}
 			
 		}, timeout, unit);
-		
+//		这样就共享错误信息了！
 		taskThread.join(unit.toMillis(timeout));
 		task.rethrow();
 	}

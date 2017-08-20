@@ -9,11 +9,13 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+/**
+ * 使用了缓存后的计算因子的效果
+ * @author zhenhua
+ * @date 2017年8月16日
+ */
 public class Factorizer extends GenericServlet implements Servlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -119631412152619351L;
 
 	private final Computable<BigInteger, BigInteger[]> c = 

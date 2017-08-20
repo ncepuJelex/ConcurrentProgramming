@@ -12,6 +12,13 @@ import net.jcip.examples.ch05.LaunderThrowable;
 import net.jcip.examples.ch06.SingleThreadRender.ImageData;
 import net.jcip.examples.ch06.SingleThreadRender.ImageInfo;
 
+/**
+ * 并发地渲染，这就对了嘛！
+ * 然而如果图片需要100s,html文本只需要1s时间，那
+ * 这样做好像提升的效率并不高啊！
+ * @author zhenhua
+ * @date 2017年8月16日
+ */
 public abstract class FutureRender {
 
 	private final ExecutorService executor = Executors.newCachedThreadPool();

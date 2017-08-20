@@ -7,6 +7,12 @@ import java.util.Set;
 import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.NotThreadSafe;
 
+/**
+ * 没想到println(...)都会搞事吧！
+ * 把set包装成synchronizedSet可以搞成线程安全哦！
+ * @author zhenhua
+ * @date 2017年8月15日
+ */
 @NotThreadSafe
 public class HiddenIterator {
 

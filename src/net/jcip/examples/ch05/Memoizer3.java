@@ -7,6 +7,15 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
+/**
+ * 第3代缓存好些了，虽然还有些time leaving的情况，
+ * 但概念比2代小多了，缓存中没有保存V,而是Future<V>,
+ * 不是判断缓存中有没有，而是发现缓存中没有想要的数据时，
+ * 缓存中有没有启动任务去开始计算。
+ * 但是，缓存的失效时间问题，缓存大小问题还没有解决。
+ * @author zhenhua
+ * @date 2017年8月16日
+ */
 public class Memoizer3<A,V> implements Computable<A,V>{
 
 	private final Map<A,Future<V>> cache = new ConcurrentHashMap<A,Future<V>>();

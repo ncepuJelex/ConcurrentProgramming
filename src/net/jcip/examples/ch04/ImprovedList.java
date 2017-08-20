@@ -7,6 +7,11 @@ import java.util.ListIterator;
 
 import net.jcip.annotations.ThreadSafe;
 
+/**
+ * 怎么那么像委托机制呢!
+ * @author zhenhua
+ * @date 2017年8月14日
+ */
 @ThreadSafe
 public class ImprovedList<E> implements List<E> {
 

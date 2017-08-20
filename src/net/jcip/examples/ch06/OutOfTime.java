@@ -5,6 +5,12 @@ import java.util.TimerTask;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
+/**
+ * 这个程序不会跑6s的，启动后直接拋出异常，这个程序
+ * 把Timer黑得漂亮！还是使用ScheduleThreadPoolExecutor吧！
+ * @author zhenhua
+ * @date 2017年8月16日
+ */
 public class OutOfTime {
 
 	public static void main(String[] args) throws InterruptedException {

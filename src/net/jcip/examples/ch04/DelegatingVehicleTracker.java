@@ -7,6 +7,12 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import net.jcip.annotations.ThreadSafe;
 
+/**
+ * private final 变量修饰，注意哦，这里面使用到的Point中变量是final的，是
+ * immutable的，而且看到的车子是live的，不是snapshot.
+ * @author zhenhua
+ * @date 2017年8月14日
+ */
 @ThreadSafe
 public class DelegatingVehicleTracker {
 
@@ -15,7 +21,7 @@ public class DelegatingVehicleTracker {
 	
 	public DelegatingVehicleTracker(Map<String,Point> points) {
 		locations = new ConcurrentHashMap<String,Point>(points);
-		unmodifiableMap = Collections.unmodifiableMap(points);
+		unmodifiableMap = Collections.unmodifiableMap(locations);
 	}
 	
 	public Map<String, Point> getLocations() {

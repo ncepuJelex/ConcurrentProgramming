@@ -6,6 +6,12 @@ import java.util.Map;
 
 import net.jcip.annotations.GuardedBy;
 
+/**
+ * 这也算是一个初级的缓存吧！
+ * 但是并发方面好差啊！
+ * @author zhenhua
+ * @date 2017年8月16日
+ */
 public class Memoizer1<A,V> implements Computable<A,V> {
 
 	@GuardedBy("this")

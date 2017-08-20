@@ -12,12 +12,16 @@ import javax.servlet.ServletResponse;
 import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.ThreadSafe;
 
+/**
+ * 线程安全的同时效率也不错！
+ * 这里使用了2个局部synchronized代码块，把需要做原子操作的
+ * 部分锁起来，这里是hit和lastNumber和lastFactors3个变量需要上锁操作。
+ * @author zhenhua
+ * @date 2017年8月13日
+ */
 @ThreadSafe
 public class CachedFactorizer extends GenericServlet implements Servlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8189663149071300938L;
 
 	@GuardedBy("this")
@@ -60,17 +64,13 @@ public class CachedFactorizer extends GenericServlet implements Servlet {
 	}
 
 	private void encodeIntoResponse(ServletResponse resp, BigInteger[] factors) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	private BigInteger[] factor(BigInteger i) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	private BigInteger extractFromRequest(ServletRequest req) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

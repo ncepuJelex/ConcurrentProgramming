@@ -4,6 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * 使用ThreadLocal来确保线程安全性，
+ * 没想到ThreadLocal还有个initialValue()方法！
+ * @author zhenhua
+ * @date 2017年8月14日
+ */
 public class ConnectionDispenser {
 
 	static String DB_URL = "jdbc:mysql:localhost:3306/mydatabase";

@@ -7,7 +7,13 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
+/**
+ * 投放广告，我只给你规定的时间内，当我把我自己的信息展示完后，
+ * 去抓取你们的广告，看看规定时间内能抓取到不，如果能，
+ * 那就投放，如果不能，那就展示默认的广告吧！
+ * @author zhenhua
+ * @date 2017年8月16日
+ */
 public class RenderWithTimeBudget {
 
 	//默认投放的广告

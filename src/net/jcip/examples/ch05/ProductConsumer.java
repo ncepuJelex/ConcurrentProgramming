@@ -4,7 +4,14 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-
+/**
+ * 好一个生产者和消费者模式！
+ * 但是不仅仅是这个哦！还有FileFilter功能，还有线程方面的东西，
+ * BlockQueue，它们操作的是一个对象，
+ * 
+ * @author zhenhua
+ * @date 2017年8月15日
+ */
 public class ProductConsumer {
 
 	static class FileCrawler implements Runnable {
@@ -74,6 +81,7 @@ public class ProductConsumer {
 		}
 		private void indexFile(File take) {
 			//Index the file...
+			System.out.println(take.getAbsolutePath());
 		}
 		
 	}
@@ -81,7 +89,7 @@ public class ProductConsumer {
 	private static final int BOUND = 10;
 	private static final int N_CONSUMERS = Runtime.getRuntime().availableProcessors();
 	
-	public static void startIndexing(File [] roots) {
+	public static void startIndexing(File[] roots) {
 		
 		BlockingQueue<File> queue = new LinkedBlockingQueue<>();
 		FileFilter filter = new FileFilter() {
@@ -99,4 +107,9 @@ public class ProductConsumer {
 		}
 	}
 	
+	public static void main(String[] args) {
+		File [] files = new File[1];
+		files[0] = new File("/Users/zhenhua/Music/网易云音乐");
+		startIndexing(files);
+	}
 }

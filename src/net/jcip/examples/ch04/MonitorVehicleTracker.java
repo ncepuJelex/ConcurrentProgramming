@@ -7,6 +7,11 @@ import java.util.Map;
 import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.ThreadSafe;
 
+/**
+ * 深度复制，虽然MutablePoint不是线程安全的，但是这个Tracker类是啊！
+ * @author zhenhua
+ * @date 2017年8月14日
+ */
 @ThreadSafe
 public class MonitorVehicleTracker {
 

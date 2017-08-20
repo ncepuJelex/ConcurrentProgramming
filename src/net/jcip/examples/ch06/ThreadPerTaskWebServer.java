@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * 每次来一个连接，都启动一个线程来处理，太浪费了！
+ * @author zhenhua
+ * @date 2017年8月16日
+ */
 public class ThreadPerTaskWebServer {
 
 	public static void main(String[] args) throws IOException {

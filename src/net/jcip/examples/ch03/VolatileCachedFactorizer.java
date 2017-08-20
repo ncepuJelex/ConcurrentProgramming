@@ -11,12 +11,15 @@ import javax.servlet.ServletResponse;
 
 import net.jcip.annotations.ThreadSafe;
 
+/**
+ * immutable变量引用对多个变量的引用，volatile修饰，
+ * 这个可以有！
+ * @author zhenhua
+ * @date 2017年8月14日
+ */
 @ThreadSafe
 public class VolatileCachedFactorizer extends GenericServlet implements Servlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6931410355603668761L;
 
 	private volatile OneValueCache cache = new OneValueCache(null,null);
@@ -35,17 +38,13 @@ public class VolatileCachedFactorizer extends GenericServlet implements Servlet 
 	}
 
 	private void encodeIntoResponse(ServletResponse resp, BigInteger[] factors) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	private BigInteger [] factor(BigInteger i) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	private BigInteger extractFromRequest(ServletRequest req) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

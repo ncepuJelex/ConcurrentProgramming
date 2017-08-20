@@ -13,7 +13,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-
+/**
+ * 在规定时间内需要完成的任务：抓取旅行广告尽量多的抓取！executor.invokeAll()...
+ * @author zhenhua
+ * @date 2017年8月16日
+ */
 public class TimeBudget {
 
 	private static ExecutorService exec = Executors.newCachedThreadPool();

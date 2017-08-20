@@ -8,7 +8,26 @@ public class PreLoader {
 
 	ProductInfo loadProductInfo() throws DataLoadException {
 		//do a lot of things to load the product info
-		return null;
+		System.out.println("begin to do work hard,this may take a while~");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+		}
+		return new ProductInfo() {
+			@Override
+			public boolean isZhiZidanDisgusting() {
+				return true;
+			}
+
+			@Override
+			public String toString() {
+				return "[".concat(this.movieName).concat(", ").concat(
+					this.price+"亿").concat(", ")
+					.concat(Boolean.toString(isZhiZidanDisgusting()).concat("]"));
+			}
+			
+			
+		};
 	}
 	
 	private final FutureTask<ProductInfo> future = 
@@ -54,7 +73,18 @@ public class PreLoader {
 	
 	interface ProductInfo {
 		
+		String movieName = "战狼2-吴京";
+		double price = 55;
+		boolean isZhiZidanDisgusting();
 	}
+	
+	public static void main(String[] args) throws Exception {
+		PreLoader loader = new PreLoader();
+		loader.start();
+		ProductInfo info = loader.get();
+		System.out.println(info);
+	}
+	
 }
 
 class DataLoadException extends Exception {

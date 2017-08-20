@@ -11,6 +11,12 @@ import javax.servlet.ServletResponse;
 
 import net.jcip.annotations.ThreadSafe;
 
+/**
+ * stateless objects are always thread-safe.
+ * 只有栈上的变量，没有成员变量，线程安全。
+ * @author 
+ * @date 2017年8月13日
+ */
 @ThreadSafe
 public class StatelessFactorizer extends GenericServlet implements Servlet {
 

@@ -4,6 +4,11 @@ import java.math.BigInteger;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+/**
+ * 阻塞住了，完了，谁也别玩了！
+ * @author zhenhua
+ * @date 2017年8月17日
+ */
 public class BrokenPrimeProducer extends Thread {
 
 	private final BlockingQueue<BigInteger> queue;

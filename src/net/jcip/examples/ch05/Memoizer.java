@@ -10,7 +10,7 @@ import java.util.concurrent.FutureTask;
 
 /**
  * 缓存方案
- * @author Jelex
+ * @author
  *
  * @param <A>
  * @param <V>

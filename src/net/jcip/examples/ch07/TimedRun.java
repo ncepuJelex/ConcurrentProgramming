@@ -8,7 +8,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import net.jcip.examples.ch05.LaunderThrowable;
-
+/**
+ * 这个简洁多了！取消线程的案例，通过Future.
+ * @author Jelex.xu
+ * @date 2017年8月17日
+ */
 public class TimedRun {
 
 	private static final ExecutorService taskExec = Executors.newCachedThreadPool();

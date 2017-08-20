@@ -11,6 +11,13 @@ import javax.servlet.ServletResponse;
 
 import net.jcip.annotations.NotThreadSafe;
 
+/**
+ * 非线程安全，因为引入了一个成员变量 count,
+ * 当多个线程访问这个变量时候，没有做原子操作，
+ * 所以有线程不安全问题
+ * @author zhenhua
+ * @date 2017年8月13日
+ */
 @NotThreadSafe
 public class UnsafeCountingFactorizer extends GenericServlet implements Servlet {
 

@@ -4,6 +4,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import net.jcip.annotations.NotThreadSafe;
 
+/**
+ * lower和upper变量是有关联的，所以这么一个composite关系就不能
+ * 这样直接处理了！是线程不安全的，要上锁！
+ * @author zhenhua
+ * @date 2017年8月14日
+ */
 @NotThreadSafe
 public class NumberRange {
 

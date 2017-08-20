@@ -12,12 +12,15 @@ import javax.servlet.ServletResponse;
 
 import net.jcip.annotations.ThreadSafe;
 
+/**
+ * 这是线程安全的！因为它使用了一个AtomicLong变量，
+ * 这样在count递增的操作是原子性的，不会存在线程不安全问题。
+ * @author zhenhua
+ * @date 2017年8月13日
+ */
 @ThreadSafe
 public class CountingFactorizer extends GenericServlet implements Servlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -5373176975167112124L;
 	
 	private final AtomicLong count = new AtomicLong(0);
@@ -36,8 +39,6 @@ public class CountingFactorizer extends GenericServlet implements Servlet {
 	}
 
 	private void encodeIntoResponse(ServletResponse resp, BigInteger[] factors) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	private BigInteger [] factor(BigInteger i) {
@@ -45,7 +46,6 @@ public class CountingFactorizer extends GenericServlet implements Servlet {
 	}
 
 	private BigInteger extractFromRequest(ServletRequest req) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

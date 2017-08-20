@@ -12,6 +12,12 @@ import javax.servlet.ServletResponse;
 import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.ThreadSafe;
 
+/**
+ * 线程安全，但是程序很垃圾，非常低效！
+ * 因为锁把整个方法都锁住了，这其实是没必要的！
+ * @author zhenhua
+ * @date 2017年8月13日
+ */
 @ThreadSafe
 public class SynchronizedFactorizer extends GenericServlet implements Servlet {
 
@@ -38,17 +44,14 @@ public class SynchronizedFactorizer extends GenericServlet implements Servlet {
 	}
 
 	private BigInteger[] factor(BigInteger i) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	private void encodeIntoResponse(ServletResponse resp, BigInteger[] lastFactors2) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	private BigInteger extractFromRequest(ServletRequest req) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

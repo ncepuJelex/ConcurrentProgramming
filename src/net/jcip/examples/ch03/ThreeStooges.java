@@ -7,6 +7,12 @@ import java.util.Vector;
 
 import net.jcip.annotations.Immutable;
 
+/**
+ * 构造方法一结束，stooges就不会改变了，安全!
+ * final 修饰的!
+ * @author zhenhua
+ * @date 2017年8月14日
+ */
 @Immutable
 public class ThreeStooges {
 

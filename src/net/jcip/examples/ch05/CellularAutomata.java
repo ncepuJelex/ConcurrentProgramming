@@ -3,6 +3,12 @@ package net.jcip.examples.ch05;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ * 计算board上元素的移动，按CPU的个数分成相应大小的线程任务，
+ * 然后合并子任务，接着下个任务……
+ * @author zhenhua
+ * @date 2017年8月16日
+ */
 public class CellularAutomata {
 
 	private final Board mainBoard;
