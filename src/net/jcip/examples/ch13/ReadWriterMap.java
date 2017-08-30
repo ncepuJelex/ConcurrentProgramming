@@ -1,0 +1,107 @@
+package net.jcip.examples.ch13;
+
+import java.util.Map;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+/**
+ * 一般来说，ConcurrentHashMap的性能是如此之好！如果你
+ * 想要一个并发、基于的hash的map,ConcurrentHashMap就好了！
+ * 但是，如果你想要提供更多对map开发的操作访问，比如LinkedHashMap,
+ * 那么这个类就有用了！
+ * @author Jelex.xu
+ * @date 2017年8月30日
+ */
+public class ReadWriterMap<K, V> {
+
+	private final Map<K, V> map;
+	private final ReadWriteLock lock = new ReentrantReadWriteLock();
+	private final Lock r = lock.readLock();
+	private final Lock w = lock.writeLock();
+	
+	public ReadWriterMap(Map<K, V> map) {
+		this.map = map;
+	}
+	
+	public V put(K key, V value) {
+		w.lock();
+		try {
+			return map.put(key, value);
+		} finally {
+			w.unlock();
+		}
+	}
+	
+	public V remove(Object key) {
+		w.lock();
+		try {
+			return map.remove(key);
+		} finally {
+			w.unlock();
+		}
+	}
+	
+	public void putAll(Map<? extends K, ? extends V> m) {
+		w.lock();
+		try {
+			map.putAll(m);
+		} finally {
+			w.unlock();
+		}
+	}
+	
+	public void clear() {
+		w.lock();
+		try {
+			map.clear();
+		} finally {
+			w.unlock();
+		}
+	}
+	
+	public V get(Object key) {
+		r.lock();
+		try {
+			return map.get(key);
+		} finally {
+			r.unlock();
+		}
+	}
+	
+	public int size() {
+		r.lock();
+		try {
+			return map.size();
+		} finally {
+			r.unlock();
+		}
+	}
+	
+	public boolean isEmpty() {
+		r.lock();
+		try {
+			return map.isEmpty();
+		} finally {
+			r.unlock();
+		}
+	}
+	
+	public boolean containsKey(Object key) {
+		r.lock();
+		try {
+			return map.containsKey(key);
+		} finally {
+			r.unlock();
+		}
+	}
+	
+	public boolean containsValue(Object value) {
+		r.lock();
+		try {
+			return map.containsValue(value);
+		} finally {
+			r.unlock();
+		}
+	}
+}
