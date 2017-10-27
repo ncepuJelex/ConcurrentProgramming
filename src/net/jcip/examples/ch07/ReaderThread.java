@@ -6,9 +6,8 @@ import java.net.Socket;
 
 /**
  * Encapsulating nonstandard cancellation in a thread by overriding interrupt
- * 通过关闭socket来取消，因为close socket后会引起一序列反应，
- * 比如throws SocketException,然后间接地达到取消线程的目的。
- * @author zhenhua
+ * 中断的时候要关闭socket，所以先关闭socket，再调用Thread类中的interrupt方法来中断。
+ * @author Jelex.xu
  *
  */
 public class ReaderThread extends Thread {
