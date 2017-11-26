@@ -6,7 +6,7 @@ import java.util.concurrent.BlockingQueue;
 
 /**
  * 阻塞住了，完了，谁也别玩了！
- * @author zhenhua
+ * @author Jelex.xu
  * @date 2017年8月17日
  */
 public class BrokenPrimeProducer extends Thread {
