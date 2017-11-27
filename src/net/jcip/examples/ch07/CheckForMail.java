@@ -7,7 +7,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * one shot execution service
+ * one shot execution service，
+ * 如果一个方法需要执行一批任务，并且直到所有任务都完成了再返回，那么就可以通过使用一个
+ * 私有的、生命周期和和方法绑定的Executor 来简化服务的生命周期管理(invokeAll和invokeAny
+ * 方法在这种情况下很有用)。
  * @author Jelex.xu
  * @date 2017年8月19日
  */
