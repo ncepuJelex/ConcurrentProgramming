@@ -17,7 +17,7 @@ import net.jcip.annotations.ThreadSafe;
  * 这里在while循环里是去寻找下一个奇数，可能还好点，
  * 如果执行的任务阻塞住了，不会去检查cancelled字段的值，就
  * 不会有机会退出while循环，那就苦逼了。所以这个方法不好。
- * @author zhenhua
+ * @author Jelex.xu
  * @date 2017年8月17日
  */
 @ThreadSafe
