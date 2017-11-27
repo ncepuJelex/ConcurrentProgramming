@@ -6,6 +6,9 @@ import java.util.concurrent.BlockingQueue;
 
 /**
  * 阻塞住了，完了，谁也别玩了！
+ * 如果producer跑在consumer前面，queue会被灌满然后put会阻塞住，
+ * 然后consumer拼命地去设置cancel标识，然并卵，因为producer卡住了，根本不会去
+ * 检查cancel标识（都怪你consumer消费不及时，不从queue中取数，让我的put操作阻塞住了）
  * @author Jelex.xu
  * @date 2017年8月17日
  */
